@@ -20,7 +20,6 @@ else
     execCmd "sudo rm -rf web/css"
 fi
 
-execConsole "profilecache:clear"
 execCmd "sudo chmod -R 777 app/cache"
 
 echoOk

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-test
-
 source vendor/kujaff/sf2scripts/functions.sh
 
 #########################

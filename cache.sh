@@ -16,8 +16,8 @@ if [ "$sf2env" = "prod" ]; then
     execCmd "sudo rm -rf app/cache/*"
     execCmd "sudo chmod -R 777 app/cache"
 else
-    execCmd "sudo rm -rf web/js"
-    execCmd "sudo rm -rf web/css"
+    #execCmd "sudo rm -rf web/js"
+    #execCmd "sudo rm -rf web/css"
 fi
 
 execCmd "sudo chmod -R 777 app/cache"

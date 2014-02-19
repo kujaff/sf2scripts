@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source scripts/functions.sh
+source vendor/kujaff/sf2scripts/functions.sh
 
 ################################################
 # Confirmation si on est sur master ou develop #
@@ -34,7 +34,7 @@ fi
 ##############################
 
 if [ "$sf2env" != "prod" ]; then
-    execCmdNoEcho "./scripts/csfixer.sh"
+    execCmdNoEcho "./vendor/kujaff/sf2scripts/csfixer.sh"
 fi
 
 ################################################
@@ -70,7 +70,7 @@ echoOk
 # doctrine:schema:update --force #
 ##################################
 
-execCmdNoEcho "./scripts/schema.sh $sf2env"
+execCmdNoEcho "./vendor/kujaff/sf2scripts/schema.sh $sf2env"
 
 ###################################
 # doctrine:fixtures:load --append #

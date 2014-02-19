@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source scripts/functions.sh
+source vendor/kujaff/sf2scripts/functions.sh
 
 #########################
 # Suppression et droits #

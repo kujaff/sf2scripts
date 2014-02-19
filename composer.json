@@ -2,5 +2,12 @@
     "name": "kujaff/sf2scripts",
     "license": "MIT",
     "type": "scripts",
-    "description": "Scripts for SF2"
+    "description": "Scripts for SF2",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/kujaff/sdebug.git"
+        }
+    ]
 }

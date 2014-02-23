@@ -19,6 +19,9 @@ if [ "$sf2env" = "prod" ]; then
     #execCmd "sudo rm -rf web/js"
     #execCmd "sudo rm -rf web/css"
 fi
+execConsole "doctrine:cache:clear-metadata"
+execConsole "doctrine:cache:clear-query"
+execConsole "doctrine:cache:clear-result"
 
 execCmd "sudo chmod -R 777 app/cache"
 

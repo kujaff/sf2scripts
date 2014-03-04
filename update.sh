@@ -33,9 +33,9 @@ fi
 # Vérification normes de dev #
 ##############################
 
-if [ "$sf2env" != "prod" ]; then
-    execCmdNoEcho "./vendor/kujaff/sf2scripts/csfixer.sh"
-fi
+#if [ "$sf2env" != "prod" ]; then
+    #execCmdNoEcho "./vendor/kujaff/sf2scripts/csfixer.sh"
+#fi
 
 ################################################
 # création des répertoires / liens symboliques #

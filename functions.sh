@@ -39,8 +39,13 @@ function createDir777() {
         execCmd "sudo mkdir $1"
     fi
 
-    execCmd "sudo setfacl -R -m u:www-data:rwX -m u:`whoami`:rwX $1"
-    execCmd "sudo setfacl -dR -m u:www-data:rwX -m u:`whoami`:rwX $1"
+    type setfacl > /dev/null 2>/dev/null
+    if [ $? = 0 ]; then
+        execCmd "sudo setfacl -R -m u:www-data:rwX -m u:`whoami`:rwX $1"
+        execCmd "sudo setfacl -dR -m u:www-data:rwX -m u:`whoami`:rwX $1"
+    else
+        execCmd "sudo chmod -R 777 $1"
+    fi
 }
 
 ################################################################################

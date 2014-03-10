@@ -37,26 +37,27 @@ Parameters :
         default : dirs,cache,pull,composerinstall,schema
 
 Scripts availables :
-  - cache
-    Delete everything in app/cache
+
+    - cache
+        Delete everything in app/cache
     
-  - composerinstall
-    Execute composer install, with --no-dev parameter if -env=prod
+    - composerinstall
+        Execute composer install, with --no-dev parameter if -env=prod
   
-  - composerinstall
-    Execute composer install, with --no-dev parameter if -env=prod
+    - composerinstall
+        Execute composer install, with --no-dev parameter if -env=prod
     
-  - csfixer
-    Execute php-cs-fixer.phar with SF2 php syntax
+    - csfixer
+        Execute php-cs-fixer.phar with SF2 php syntax
     
-  - dirs
-    Create app/cache and app/logs, and set credentials (setfacl or chmod 777)
+    - dirs
+        Create app/cache and app/logs, and set credentials (setfacl or chmod 777)
     
-  - doctrinecache
-    Clear doctrine cache
+    - doctrinecache
+        Clear doctrine cache
     
-  - pull
-    Execute git pull
+    - pull
+        Execute git pull
     
-  - schema
-    Update database, with SF2 command "doctrine:schema:update --force"
+    - schema
+        Update database, with SF2 command "doctrine:schema:update --force"

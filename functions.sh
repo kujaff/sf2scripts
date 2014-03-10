@@ -1,9 +1,12 @@
 #!/bin/bash
 
-if [ "$1" != "" ]; then
-    sf2env=$1
-else
+if [ "$sf2env" = "" ]; then
     sf2env="dev"
+    for param in $*; do
+        if [ ${param:0:5} == '-env=' ]; then
+            sf2env=${param:5}
+        fi
+    done
 fi
 
 ################################################################################
@@ -52,7 +55,7 @@ function createDir777() {
 
 function cancelScript() {
     if [ "$1" = "" ]; then
-        message="Erreur lors de l'execution du script."
+        message="Script canceled, error occured."
     else
         message=$1
     fi

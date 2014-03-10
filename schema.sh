@@ -12,7 +12,7 @@ execCmdNoEcho "./vendor/kujaff/sf2scripts/cache.sh $sf2env"
 # mise à jour de la structure #
 ###############################
 
-title "Mise à jour de la base de donnees"
+title "Update database"
 execConsole "doctrine:schema:update --force"
 
 echoOk

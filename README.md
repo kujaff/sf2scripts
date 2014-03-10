@@ -39,26 +39,26 @@ Parameters :
 Availables scripts
 ==================
 
-    - cache
+    cache
         Delete everything in app/cache
     
-    - composerinstall
+    composerinstall
         Execute composer install, with --no-dev parameter if -env=prod
   
-    - composerinstall
+    composerinstall
         Execute composer install, with --no-dev parameter if -env=prod
     
-    - csfixer
+    csfixer
         Execute php-cs-fixer.phar with SF2 php syntax
     
-    - dirs
+    dirs
         Create app/cache and app/logs, and set credentials (setfacl or chmod 777)
     
-    - doctrinecache
+    doctrinecache
         Clear doctrine cache
     
-    - pull
+    pull
         Execute git pull
     
-    - schema
+    schema
         Update database, with SF2 command "doctrine:schema:update --force"

@@ -36,7 +36,7 @@ Parameters :
         scripts to execute, can call SF2 console command with "console:" prefix
         default : dirs,cache,pull,composerinstall,schema
 
-Scripts availables :
+Availables scripts :
 
     - cache
         Delete everything in app/cache

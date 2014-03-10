@@ -8,32 +8,33 @@ Installation
 
 Composer :
 
-  # composer.json
-  {
-    "require": {
-        "kujaff/sf2scripts": "dev-master",
+    # composer.json
+    {
+        "require": {
+            "kujaff/sf2scripts": "dev-master",
+        }
     }
-  }
 
 
 Utilisation
 ===========
 
 Main script is scripts.sh, you can call simply call it :
-  ./vendor/kujaff/sf2scripts/scripts.sh
+
+    ./vendor/kujaff/sf2scripts/scripts.sh
 
 Parameters :
 
-  -env=[dev|prod|yourEnv]
-    symfony2 environment (most os the time dev or prod)
-    default : dev
+    -env=[dev|prod|yourEnv]
+        symfony2 environment (most os the time dev or prod)
+        default : dev
     
-  -confirm=[true|false]
-    if you are on master branch, confirm parameter indicate if you to confirm script excution
+    -confirm=[true|false]
+        if you are on master branch, confirm parameter indicate if you to confirm script excution
     
-  -scripts=script1,script2,console:mySF2Command
-    scripts to execute, can call SF2 console command with "console:" prefix
-    default : dirs,cache,pull,composerinstall,schema
+    -scripts=script1,script2,console:mySF2Command
+        scripts to execute, can call SF2 console command with "console:" prefix
+        default : dirs,cache,pull,composerinstall,schema
 
 Scripts availables :
   - cache

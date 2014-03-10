@@ -65,4 +65,4 @@ done
 # fin #
 #######
 
-block 42 "Mise à jour terminée"
+block 42 "Update terminated"

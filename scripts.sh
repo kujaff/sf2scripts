@@ -3,7 +3,7 @@
 source vendor/kujaff/sf2scripts/functions.sh
 
 confirm="true"
-scripts="dirs,pull,composerinstall,schema"
+scripts="dirs,cache,pull,composerinstall,schema"
 for param in $*
 do
     if [ ${param:0:9} = '-confirm=' ]; then

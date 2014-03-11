@@ -43,6 +43,9 @@ for script in $arScripts; do
     elif [ "$script" = "dirs" ]; then
         execCmdNoEcho "./vendor/kujaff/sf2scripts/dirs.sh -env=$sf2env"
 
+    elif [ "$script" = "cache" ]; then
+        execCmdNoEcho "./vendor/kujaff/sf2scripts/cache.sh -env=$sf2env"
+
     elif [ "$script" = "pull" ]; then
         execCmdNoEcho "./vendor/kujaff/sf2scripts/pull.sh -env=$sf2env"
 

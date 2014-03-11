@@ -59,6 +59,7 @@ for script in $arScripts; do
         execCmdNoEcho "./vendor/kujaff/sf2scripts/schema.sh -env=$sf2env"
     
     elif [ ${script:0:8} = "console:" ]; then
+        title "Symfony2 console : ${script:8}"
         execConsole ${script:8}
 
     fi

@@ -9,6 +9,13 @@ if [ "$sf2env" = "" ]; then
     done
 fi
 
+webserverUser="www-data"
+for param in $*; do
+    if [ ${param:0:16} == '-webserver-user=' ]; then
+        webserverUser=${param:16}
+    fi
+done
+
 ################################################################################
 
 function block() {
@@ -26,7 +33,7 @@ function block() {
 ################################################################################
 
 function title() {
-    block 46 "$1"
+   block 46 "$1"
 }
 
 ################################################################################
@@ -44,8 +51,8 @@ function createDir777() {
 
     type setfacl > /dev/null 2>/dev/null
     if [ $? = 0 ]; then
-        execCmd "sudo setfacl -R -m u:www-data:rwX -m u:`whoami`:rwX $1"
-        execCmd "sudo setfacl -dR -m u:www-data:rwX -m u:`whoami`:rwX $1"
+        execCmd "sudo setfacl -R -m u:$webserverUser:rwX -m u:`whoami`:rwX $1"
+        execCmd "sudo setfacl -dR -m u:$webserverUser:rwX -m u:`whoami`:rwX $1"
     else
         execCmd "sudo chmod -R 777 $1"
     fi
@@ -87,7 +94,7 @@ function execCmdNoEcho() {
 ################################################################################
 
 function execConsole() {
-    execCmd "sudo -u www-data php app/console --env=$sf2env $1";
+    execCmd "sudo -u $webserverUser php app/console --env=$sf2env $1";
 }
 
 ################################################################################

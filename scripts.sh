@@ -41,22 +41,22 @@ for script in $arScripts; do
         execCmdNoEcho "./vendor/kujaff/sf2scripts/csfixer.sh"
 
     elif [ "$script" = "dirs" ]; then
-        execCmdNoEcho "./vendor/kujaff/sf2scripts/dirs.sh -env=$sf2env"
+        execCmdNoEcho "./vendor/kujaff/sf2scripts/dirs.sh -env=$sf2env -webserver-user=$webserverUser"
 
     elif [ "$script" = "cache" ]; then
-        execCmdNoEcho "./vendor/kujaff/sf2scripts/cache.sh -env=$sf2env"
+        execCmdNoEcho "./vendor/kujaff/sf2scripts/cache.sh -env=$sf2env -webserver-user=$webserverUser"
 
     elif [ "$script" = "pull" ]; then
-        execCmdNoEcho "./vendor/kujaff/sf2scripts/pull.sh -env=$sf2env"
+        execCmdNoEcho "./vendor/kujaff/sf2scripts/pull.sh -env=$sf2env -webserver-user=$webserverUser"
 
     elif [ "$script" = "composerinstall" ]; then
-        execCmdNoEcho "./vendor/kujaff/sf2scripts/composerinstall.sh -env=$sf2env"
+        execCmdNoEcho "./vendor/kujaff/sf2scripts/composerinstall.sh -env=$sf2env -webserver-user=$webserverUser"
 
     elif [ "$script" = "composersupdate" ]; then
-        execCmdNoEcho "./vendor/kujaff/sf2scripts/composerupdate.sh -env=$sf2env"
+        execCmdNoEcho "./vendor/kujaff/sf2scripts/composerupdate.sh -env=$sf2env -webserver-user=$webserverUser"
 
     elif [ "$script" = "schema" ]; then
-        execCmdNoEcho "./vendor/kujaff/sf2scripts/schema.sh -env=$sf2env"
+        execCmdNoEcho "./vendor/kujaff/sf2scripts/schema.sh -env=$sf2env -webserver-user=$webserverUser"
     
     elif [ ${script:0:8} = "console:" ]; then
         title "Symfony2 console : ${script:8}"

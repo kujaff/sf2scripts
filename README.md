@@ -36,8 +36,15 @@ Parameters :
         scripts to execute, can call SF2 console command with "console:" prefix
         default : dirs,cache,pull,composerinstall,schema
 
+    -webserver-user=www-data
+        username of webserver (apache, nginx, etc)
+        default : www-data
+
+
 Availables scripts
 ==================
+
+Each scripts accept -webserver-user parameter.
 
     cache
         Delete everything in app/cache

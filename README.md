@@ -11,7 +11,7 @@ Composer :
     # composer.json
     {
         "require": {
-            "kujaff/sf2scripts": "dev-master",
+            "kujaff/sf2scripts": "~1.0",
         }
     }
 

@@ -10,9 +10,12 @@ if [ "$sf2env" = "" ]; then
 fi
 
 webserverUser="www-data"
+verbose=""
 for param in $*; do
     if [ ${param:0:16} == '-webserver-user=' ]; then
         webserverUser=${param:16}
+    elif [ ${param:0:2} == '-v' ]; then
+        verbose="v"
     fi
 done
 
@@ -87,7 +90,11 @@ function execCmd() {
 ################################################################################
 
 function execCmdNoEcho() {
-    $1
+    if [ "$verbose" = "v" ]; then
+        $1
+    else
+        $1 > /dev/null
+    fi
     [ "$?" != "0" ] && cancelScript "$2"
 }
 

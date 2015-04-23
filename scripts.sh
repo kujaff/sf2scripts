@@ -4,12 +4,15 @@ source vendor/kujaff/sf2scripts/functions.sh
 
 confirm="true"
 scripts="dirs,cache,pull,composerinstall,schema"
+endMessage="true"
 for param in $*
 do
     if [ ${param:0:9} = '-confirm=' ]; then
         confirm=${param:9}
     elif [ ${param:0:9} = '-scripts=' ]; then
         scripts=${param:9}
+    elif [ ${param:0:13} = '-end-message=' ]; then
+        endMessage=${param:13}
     fi
 done
 
@@ -69,4 +72,6 @@ done
 # fin #
 #######
 
-block 42 "Update terminated"
+if [ "$endMessage" = "yes" ]; then
+    block 42 "Update terminated"
+fi

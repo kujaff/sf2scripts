@@ -7,7 +7,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/kujaff/sdebug.git"
+            "url": "https://github.com/steevanb/sf2scripts.git"
         }
     ]
 }

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+autoNewLine=false
+
 if [ "$sf2env" = "" ]; then
     sf2env="dev"
     for param in $*; do
@@ -19,8 +21,6 @@ for param in $*; do
     fi
 done
 
-################################################################################
-
 function block() {
     titleLength=${#2}
     echo -en "\n\033[$1m\033[1;37m    "
@@ -33,19 +33,13 @@ function block() {
     echo -en "\033[0m\n\n"
 }
 
-################################################################################
-
 function title() {
    block 46 "$1"
 }
 
-################################################################################
-
 function getGitBranch() {
     echo "$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' -e 's/(//g' -e 's/)//g')"
 }
-
-################################################################################
 
 function createDir777() {
     if [ ! -d "$1" ]; then
@@ -61,8 +55,6 @@ function createDir777() {
     fi
 }
 
-################################################################################
-
 function cancelScript() {
     if [ "$1" = "" ]; then
         message="Script canceled, error occured."
@@ -74,20 +66,17 @@ function cancelScript() {
     exit 1
 }
 
-################################################################################
-
 function echoOk() {
-    echo -e "[\033[32m OK \033[00m]";
+    echo -en "\n[\033[32m OK \033[00m]\n";
 }
-
-################################################################################
 
 function execCmd() {
-    echo "$ $1";
-    execCmdNoEcho "$1" "$2"
+    if [[ ( "$3" == "" && $autoNewLine == true ) || $3 == true ]]; then
+        echo ""
+    fi
+    echo -en "\033[45m\033[1;37m$ $1\033[0m\n"
+    execCmdNoEcho "$1" "$2" false
 }
-
-################################################################################
 
 function execCmdNoEcho() {
     if [ "$verbose" = "v" ]; then
@@ -96,12 +85,10 @@ function execCmdNoEcho() {
         $1 > /dev/null
     fi
     [ "$?" != "0" ] && cancelScript "$2"
-}
 
-################################################################################
+    autoNewLine=true
+}
 
 function execConsole() {
     execCmd "sudo -u $webserverUser php app/console --env=$sf2env $1";
 }
-
-################################################################################

@@ -11,7 +11,7 @@ Composer :
     # composer.json
     {
         "require": {
-            "kujaff/sf2scripts": "~1.0",
+            "kujaff/sf2scripts": "1.2.*",
         }
     }
 

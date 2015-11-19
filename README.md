@@ -1,3 +1,5 @@
+![Total Downloads](https://poser.pugx.org/kujaff/sf2scripts/downloads)
+
 sf2scripts
 ==========
 
